@@ -9,12 +9,29 @@ import CrButton from '@/components/CrButton';
 import useTheme from '@/utils/hooks/useTheme';
 import CrInstudiText from '@/components/CrInstudiText';
 import Link from 'next/link';
+import {useRouter} from 'next/navigation';
+import {toast} from 'react-toastify';
 
 interface Props {}
 const quicksand = Quicksand({
   weight: '500',
   subsets: ['latin'],
 });
+
+async function login(email: string, password: string) {
+  const res = await fetch('http://localhost:3006/auth/login', {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({email, password}),
+  });
+
+  const json = await res.json();
+
+  return json;
+}
 const LoginPage: NextPage<Props> = ({}) => {
   interface Values {
     email: string;
@@ -27,6 +44,7 @@ const LoginPage: NextPage<Props> = ({}) => {
   };
 
   const isDarkTheme = useTheme();
+  const router = useRouter();
 
   const loginSchema = Yup.object().shape({
     password: Yup.string()
@@ -35,8 +53,12 @@ const LoginPage: NextPage<Props> = ({}) => {
     email: Yup.string().email('Geçersiz Email Adresi').required('Zorunlu Alan'),
   });
 
-  function handleOnSubmit(values: Values) {
-    logger(values);
+  async function handleOnSubmit(values: Values) {
+    const json = await login(values.email, values.password);
+    if (json.code == 200) {
+      toast.success('Giriş Yaptın Say :)');
+      router.push('/');
+    }
   }
 
   return (

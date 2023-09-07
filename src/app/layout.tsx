@@ -11,8 +11,9 @@ import logger from '@/utils/logger';
 import CrMenuWrapper from '@/components/CrMenuWrapper';
 import CrButton from '@/components/CrButton';
 import CrInstudiText from '@/components/CrInstudiText';
-import CrNavButton from '@/components/usecase/CrNavButton';
+import CrNavIsLoggedIn from '@/components/usecase/CrNavIsLoggedIn';
 import CrSuperLogo from '@/components/simple/CrSuperLogo';
+import CrToastContainer from '@/components/usecase/CrToastContainer';
 
 const inter = Inter({subsets: ['latin']});
 const quicksand = Quicksand({subsets: ['latin']});
@@ -68,12 +69,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       lang={siteMetadata.language}
       className='overflow-x-hidden scroll-smooth'>
       <body className={inter.className}>
+        <CrToastContainer />
         <div className='w-[100vw] fixed dark:mix-blend-screen mix-blend-multiply backdrop-blur-sm z-50 invisible md:visible text-[var(--foreground-rgb)] bg-slate-300/10 align-middle text-center h-[10vh] flex flex-row  '>
           <CrInstudiText useText={false} imgClass='shrink' />
           <div className='basis-[32%]'></div>
           <div className='grow flex flex-row-reverse items-center justify-center'>
             <div className='grow flex justify-center items-center'>
-              <CrNavButton
+              <CrNavIsLoggedIn
                 useText={false}
                 svgDs={[
                   'M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z',

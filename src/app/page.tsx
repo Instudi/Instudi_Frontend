@@ -3,7 +3,7 @@ import Image from 'next/image';
 import InstudiApp from '../../public/static/instudiAppPage.png';
 import CrButton from '@/components/CrButton';
 import CrInstudiText from '@/components/CrInstudiText';
-import CrNavButton from '@/components/usecase/CrNavButton';
+import CrNavButton from '@/components/usecase/CrNavIsLoggedIn';
 
 export default function Home() {
   return (

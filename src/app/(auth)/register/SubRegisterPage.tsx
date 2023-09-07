@@ -9,6 +9,8 @@ import {useEffect, useState} from 'react';
 import CrInstudiText from '@/components/CrInstudiText';
 import CrTextInput from '@/components/CrTextInput';
 import {Inter} from 'next/font/google';
+import {useRouter} from 'next/navigation';
+import {toast} from 'react-toastify';
 
 interface Props {
   section: string;
@@ -20,6 +22,24 @@ interface Values {
 }
 
 const inter = Inter({subsets: ['latin']});
+
+async function register(values: Values, role: string) {
+  const res = await fetch(
+    `http://localhost:3000/api/add?email=${values.email}&password=${
+      values.password
+    }&role=${role.toUpperCase()}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  );
+
+  const json = await res.json();
+
+  return json;
+}
 
 const SubRegisterPage: NextPage<Props> = ({section, ...rest}) => {
   const [role, setRole] = useState('');
@@ -34,6 +54,7 @@ const SubRegisterPage: NextPage<Props> = ({section, ...rest}) => {
   };
 
   const isDarkTheme = useTheme();
+  const router = useRouter();
 
   const loginSchema = Yup.object().shape({
     password: Yup.string()
@@ -42,8 +63,15 @@ const SubRegisterPage: NextPage<Props> = ({section, ...rest}) => {
     email: Yup.string().email('Geçersiz Email Adresi').required('Zorunlu Alan'),
   });
 
-  function handleOnSubmit(values: Values) {
-    logger(values);
+  async function handleOnSubmit(values: Values) {
+    const res = await register(values, role);
+    if (res.data.code === 200) {
+      router.push('/login');
+      toast.success('Aramıza katıldın, giriş yapmayı unutma!');
+    }
+    if (res.data.code == 1004) {
+      toast.error(res.data.message);
+    }
   }
   return (
     <div className='w-full h-full'>
