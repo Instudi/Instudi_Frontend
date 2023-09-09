@@ -82,10 +82,10 @@ const SubRegisterPage: NextPage<Props> = ({section, ...rest}) => {
           handleOnSubmit(values);
         }}>
         {({handleSubmit, isSubmitting}) => (
-          <Form className='flex flex-col w-full relative h-[86%] 2xl:h-[75%] items-center '>
+          <Form className='flex flex-col w-full relative h-[90%] md:h-[86%] 2xl:h-[75%] items-center '>
             <h1
-              className={`login capitalize text-3xl w-[80%] tracking-tight font-bold bg-gradient-to-r ${inter.className}
-           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-5 md:mt-0 mb-10 text-center`}>
+              className={`login capitalize text-2xl md:text-3xl w-[80%] tracking-tight font-bold bg-gradient-to-r ${inter.className}
+           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-2.5 md:mt-0 mb-8 md:mb-10 text-center`}>
               slm, merhabalar efenim!
             </h1>
             <CrTextInput

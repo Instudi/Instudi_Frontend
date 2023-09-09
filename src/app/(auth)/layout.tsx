@@ -25,9 +25,9 @@ const AuthLayout: NextPage<Props> = ({children}) => {
             fillOpacity='1'
             d='M0,96L34.3,128C68.6,160,137,224,206,213.3C274.3,203,343,117,411,112C480,107,549,181,617,197.3C685.7,213,754,171,823,176C891.4,181,960,235,1029,250.7C1097.1,267,1166,245,1234,229.3C1302.9,213,1371,203,1406,197.3L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z'></path>
         </svg>
-        <div className='bg-gradient-to-b h-[70vh] via-[#8366ff] from-[var(--primary-rgb)] to-[#c986ff]'>
+        <div className='bg-gradient-to-b h-[85vh] md:h-[70vh] via-[#8366ff] from-[var(--primary-rgb)] to-[#c986ff]'>
           <div
-            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] md:h-[100%] top-[10%] md:top-[0%] relative 
+            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] md:h-[100%] top-[4%] md:top-[0%] relative 
             shadow-xl z-20 rounded-xl dark:bg-slate-800/90 bg-indigo-600/70'>
             {children}
           </div>

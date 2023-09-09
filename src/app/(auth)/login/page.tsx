@@ -74,8 +74,8 @@ const LoginPage: NextPage<Props> = ({}) => {
             className='flex flex-col w-full relative h-[86%] 2xl:h-[75%] items-center 
           before:h-0.5 before:bg-yellow-300 before:absolute before:bottom-0 before:w-[60%] before:left-[20%]'>
             <h1
-              className='login text-3xl tracking-tight font-bold bg-gradient-to-r
-           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-5 md:mt-0 mb-10 text-center'>
+              className='login text-2xl md:text-3xl tracking-tight font-bold bg-gradient-to-r
+           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-2.5 md:mt-0 mb-8 md:mb-10 text-center'>
               <CrInstudiText
                 useText={false}
                 imgClass='mix-blend-multiply dark:mix-blend-screen relative left-1/2 -translate-x-1/2'
@@ -113,8 +113,8 @@ const LoginPage: NextPage<Props> = ({}) => {
           </Form>
         )}
       </Formik>
-      <div className='relative text-center w-full h-[14%]'>
-        <p className='relative top-1/2 left-1/2 transition-all hover:scale-125 -translate-y-1/2 -translate-x-1/2 text-xs md:text-sm text-yellow-300'>
+      <div className='relative text-center w-full h-[10%] md:h-[14%]'>
+        <p className='relative top-1/2 left-1/2 transition-all hover:scale-110 md:hover:scale-125 -translate-y-1/2 -translate-x-1/2 text-xs md:text-sm text-yellow-300'>
           Hesabınız hala yok mu? Hemen{' '}
           <Link
             href='/register'
