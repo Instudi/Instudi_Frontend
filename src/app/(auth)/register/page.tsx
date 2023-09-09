@@ -113,7 +113,7 @@ const RegisterPage: NextPage<Props> = ({}) => {
             }}
           />
           <CrRegisterSection
-            id='mentor-section'
+            id='teacher-section'
             title='Mentör'
             description='Öğretmen veya üniversite öğrencisiysen ya da herhangi bir alanda bilgi paylaşmak istiyorsan'
             className='lg:before:invisible before:w-1 before:opacity-70 before:h-full before:-top-1/2 relative before:left-0 before:bg-yellow-500 before:absolute'
@@ -125,7 +125,7 @@ const RegisterPage: NextPage<Props> = ({}) => {
             }}
           />
           <CrRegisterSection
-            id='institution-section'
+            id='CONSTITUTION-section'
             title='Kurum'
             description="Kurumunuzu tanıtmak ve öğrencilerinize Türkiye'nin en büyük eğitim platformunda ulaşmak istiyorsan"
             className='lg:before:invisible lg:after:invisible before:w-1/2 before:h-1/2 before:top-0 pt-2 relative before:left-0 before:border-l-4 before:border-t-4 before:border-yellow-500 before:absolute

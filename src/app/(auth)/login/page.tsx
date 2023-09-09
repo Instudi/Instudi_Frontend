@@ -19,7 +19,7 @@ const quicksand = Quicksand({
 });
 
 async function login(email: string, password: string) {
-  const res = await fetch('http://localhost:3006/auth/login', {
+  const res = await fetch('http://instudi.com:3006/auth/login', {
     method: 'POST',
     credentials: 'include',
     headers: {

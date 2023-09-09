@@ -16,7 +16,6 @@ export async function POST(req: NextRequest) {
             email,
             password,
             role,
-            name: "test"
         })
     })
 
