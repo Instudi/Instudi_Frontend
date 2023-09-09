@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation'
 //  redirect('https://nextjs.org/')
 //const headersList = headers()
 
-
+/*
 export async function GET() {
     const res = await fetch('https://data.mongodb-api.com/...', {
         headers: {
@@ -28,3 +28,4 @@ export async function GET2(request: Request) {
         headers: { 'Set-Cookie': `token=${token.value}` },
     })
 }
+*/
