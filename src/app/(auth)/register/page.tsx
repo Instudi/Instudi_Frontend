@@ -138,7 +138,7 @@ const RegisterPage: NextPage<Props> = ({}) => {
             }}
           />
           <div
-            className={`absolute top-0 -translate-y-full shadow-xl left-1/2 -translate-x-1/2 ${
+            className={`absolute top-0 -translate-y-1/2 md:-translate-y-full shadow-xl left-1/2 -translate-x-1/2 ${
               section ? 'visible lg:invisible' : 'invisible'
             }`}>
             <CrButton
