@@ -7,7 +7,7 @@ import CrNavButton from '@/components/usecase/CrNavIsLoggedIn';
 
 export default function Home() {
   return (
-    <main className='h-screen w-screen px-10 ios:pt-80 flex flex-wrap lg:flex-nowrap flex-row'>
+    <main className='h-screen w-screen px-10 flex flex-wrap lg:flex-nowrap flex-row'>
       <div className='w-full  pt-[10vh]'>
         <CrInstudiText useImg={false} />
         <div
