@@ -14,6 +14,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
         mini={true}
         className='md:hidden relative z-30 w-[45vw] left-1/2 -translate-x-1/2'
         isBlock={false}
+        useText={false}
       />
       <div className='-translate-y-[8.4%] md:-translate-y-[17%] overflow-hidden'>
         <svg
