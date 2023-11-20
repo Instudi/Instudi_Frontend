@@ -19,14 +19,19 @@ const quicksand = Quicksand({
 });
 
 async function login(email: string, password: string) {
-  const res = await fetch('https://api.instudi.com/auth/login', {
-    method: 'POST',
-    credentials: 'include',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({email, password}),
-  });
+  const res = await fetch(
+    process.env.NODE_ENV == 'production'
+      ? 'https://api.instudi.com/auth/login'
+      : 'http://localhost:3006/auth/login',
+    {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({email, password}),
+    }
+  );
 
   const json = await res.json();
 

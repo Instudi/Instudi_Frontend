@@ -13,9 +13,7 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      screens: {
-        'ios': { 'raw': '(-webkit-touch-callout: none)' },
-      },
+
     },
     gridTemplateRows: {
       '8': 'repeat(8, minmax(0, 1fr))',
@@ -24,8 +22,5 @@ const config: Config = {
   plugins: [
     require('@tailwindcss/forms'),
   ],
-  corePlugins: {
-    preflight: false,
-  },
 }
 export default config

@@ -25,9 +25,13 @@ const inter = Inter({subsets: ['latin']});
 
 async function register(values: Values, role: string) {
   const res = await fetch(
-    `https://instudi.com/api/add?email=${values.email}&password=${
-      values.password
-    }&role=${role.toUpperCase()}`,
+    process.env.NODE_ENV === 'production'
+      ? `https://instudi.com/api/add?email=${values.email}&password=${
+          values.password
+        }&role=${role.toUpperCase()}`
+      : `http://localhost:3000/api/add?email=${values.email}&password=${
+          values.password
+        }&role=${role.toUpperCase()}`,
     {
       method: 'POST',
       headers: {
