@@ -1,9 +1,8 @@
 'use client';
 import {NextPage} from 'next';
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {Formik, Form} from 'formik';
 import * as Yup from 'yup';
 import {Quicksand} from 'next/font/google';
-import logger from '@/utils/logger';
 import CrTextInput from '@/components/CrTextInput';
 import CrButton from '@/components/CrButton';
 import useTheme from '@/utils/hooks/useTheme';
@@ -11,6 +10,8 @@ import CrInstudiText from '@/components/CrInstudiText';
 import Link from 'next/link';
 import {useRouter} from 'next/navigation';
 import {toast} from 'react-toastify';
+import {parseCookies} from 'nookies';
+import {useEffect, useState} from 'react';
 
 interface Props {}
 const quicksand = Quicksand({
@@ -51,6 +52,11 @@ const LoginPage: NextPage<Props> = ({}) => {
   const isDarkTheme = useTheme();
   const router = useRouter();
 
+  useEffect(() => {
+    let hasAuth = localStorage.getItem('hasAuth') == 'true' ? true : false;
+    if (hasAuth == true) router.push('/home');
+  }, []);
+
   const loginSchema = Yup.object().shape({
     password: Yup.string()
       .min(8, 'Şifre 8 Karakterden Uzun Olmalı')
@@ -60,9 +66,14 @@ const LoginPage: NextPage<Props> = ({}) => {
 
   async function handleOnSubmit(values: Values) {
     const json = await login(values.email, values.password);
+    if (json.code == 402) {
+      toast.error('Şifre ya da E-posta hatalı');
+    }
     if (json.code == 200) {
       toast.success('Giriş Yaptın Say :)');
-      router.push('/');
+      localStorage.setItem('hasAuth', 'true');
+      window.dispatchEvent(new Event('storage'));
+      router.push('/home');
     }
   }
 

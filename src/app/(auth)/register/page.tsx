@@ -5,10 +5,11 @@ import useTheme from '@/utils/hooks/useTheme';
 import {Quicksand, Inter} from 'next/font/google';
 import {NextPage} from 'next';
 import Link from 'next/link';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import CrRegisterSection from '@/components/simple/CrRegisterSection';
 import {useWindowWidth} from '@/utils/hooks/useWindowWidth';
 import SubRegisterPage from './SubRegisterPage';
+import {useRouter} from 'next/navigation';
 
 interface Props {}
 const quicksand = Quicksand({
@@ -20,6 +21,11 @@ const inter = Inter({
 });
 
 const RegisterPage: NextPage<Props> = ({}) => {
+  const router = useRouter();
+  useEffect(() => {
+    let hasAuth = localStorage.getItem('hasAuth') == 'true' ? true : false;
+    if (hasAuth == true) router.push('/home');
+  }, []);
   function handleMobileInterface(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     setIsClicked(true);

@@ -2,18 +2,13 @@ import '../styles/globals.css';
 import type {Metadata} from 'next';
 import {Inter, Quicksand} from 'next/font/google';
 import siteMetadata from '../siteMetadata.js';
-import Image from 'next/image';
-import Logo from '../../public/static/2.png';
 import Link from 'next/link';
-import {HiLogin} from 'react-icons/hi';
-import {useRef, useState} from 'react';
-import logger from '@/utils/logger';
 import CrMenuWrapper from '@/components/CrMenuWrapper';
-import CrButton from '@/components/CrButton';
 import CrInstudiText from '@/components/CrInstudiText';
-import CrNavIsLoggedIn from '@/components/usecase/CrNavIsLoggedIn';
+import CrNavIsLoggedIn from '@/client/CrNavIsLoggedIn';
 import CrSuperLogo from '@/components/simple/CrSuperLogo';
 import CrToastContainer from '@/components/usecase/CrToastContainer';
+import CrNavLogic from '@/client/CrNavLogic';
 
 const inter = Inter({subsets: ['latin']});
 const quicksand = Quicksand({subsets: ['latin']});
@@ -68,6 +63,12 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
     <html
       lang={siteMetadata.language}
       className='overflow-x-hidden scroll-smooth'>
+      <head>
+        <meta
+          name='format-detection'
+          content='telephone=no, date=no, email=no, address=no'
+        />
+      </head>
       <body className={inter.className}>
         <CrToastContainer />
         <div className='w-[100vw] fixed dark:mix-blend-screen mix-blend-multiply backdrop-blur-sm z-50 invisible md:visible text-[var(--foreground-rgb)] bg-slate-300/10 align-middle text-center h-[10vh] flex flex-row  '>
@@ -102,12 +103,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               href='/about'>
               Webinarlar
             </Link>
-            <Link
-              className='text-xl antialiased grow underline underline-offset-2 decoration-wavy
-            decoration-[var(--secondary-rgb)] font-medium text-[var(--primary-rgb)]  hover:font-semibold hover:text-2xl hover:no-underline transition-all'
-              href='/contact'>
-              Anasayfa
-            </Link>
+            <CrNavLogic />
           </div>
           <div className='basis-5'></div>
         </div>
@@ -128,8 +124,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                   fill='inherit'
                   strokeWidth='0'
                   viewBox='0 0 256 256'
-                  height='inherit'
-                  width='inherit'
                   xmlns='http://www.w3.org/2000/svg'>
                   <path d='M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,72a24,24,0,1,1,24-24A24,24,0,0,1,128,152ZM176,20H80A60.07,60.07,0,0,0,20,80v96a60.07,60.07,0,0,0,60,60h96a60.07,60.07,0,0,0,60-60V80A60.07,60.07,0,0,0,176,20Zm36,156a36,36,0,0,1-36,36H80a36,36,0,0,1-36-36V80A36,36,0,0,1,80,44h96a36,36,0,0,1,36,36ZM196,76a16,16,0,1,1-16-16A16,16,0,0,1,196,76Z'></path>
                 </svg>
@@ -141,8 +135,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
                   strokeWidth='0'
                   role='img'
                   viewBox='0 0 24 24'
-                  height='inherit'
-                  width='inherit'
                   xmlns='http://www.w3.org/2000/svg'>
                   <title></title>
                   <path d='M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z'></path>

@@ -1,10 +1,9 @@
-'use client';
 import {NextPage} from 'next';
 import {LineWave} from 'react-loader-spinner';
 
 interface Props {}
 
-const Loading: NextPage<Props> = ({}) => {
+const CrTextLoader: NextPage<Props> = ({}) => {
   return (
     <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 '>
       <LineWave
@@ -23,4 +22,4 @@ const Loading: NextPage<Props> = ({}) => {
   );
 };
 
-export default Loading;
+export default CrTextLoader;
