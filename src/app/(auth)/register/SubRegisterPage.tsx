@@ -1,16 +1,16 @@
 'use client';
-import {NextPage} from 'next';
-import {Formik, Form} from 'formik';
+import { NextPage } from 'next';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import CrButton from '@/components/CrButton';
 import logger from '@/utils/logger';
 import useTheme from '@/utils/hooks/useTheme';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import CrInstudiText from '@/components/CrInstudiText';
 import CrTextInput from '@/components/CrTextInput';
-import {Inter} from 'next/font/google';
-import {useRouter} from 'next/navigation';
-import {toast} from 'react-toastify';
+import { Inter } from 'next/font/google';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 interface Props {
   section: string;
@@ -21,17 +21,15 @@ interface Values {
   password: string;
 }
 
-const inter = Inter({subsets: ['latin']});
+const inter = Inter({ subsets: ['latin'] });
 
 async function register(values: Values, role: string) {
   const res = await fetch(
     process.env.NODE_ENV === 'production'
-      ? `https://instudi.com/api/add?email=${values.email}&password=${
-          values.password
-        }&role=${role.toUpperCase()}`
-      : `http://localhost:3000/api/add?email=${values.email}&password=${
-          values.password
-        }&role=${role.toUpperCase()}`,
+      ? `https://${process.env.ROOT_URI}/api/add?email=${values.email}&password=${values.password
+      }&role=${role.toUpperCase()}`
+      : `http://localhost:3000/api/add?email=${values.email}&password=${values.password
+      }&role=${role.toUpperCase()}`,
     {
       method: 'POST',
       headers: {
@@ -45,7 +43,7 @@ async function register(values: Values, role: string) {
   return json;
 }
 
-const SubRegisterPage: NextPage<Props> = ({section, ...rest}) => {
+const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
   const [role, setRole] = useState('');
 
   useEffect(() => {
@@ -85,7 +83,7 @@ const SubRegisterPage: NextPage<Props> = ({section, ...rest}) => {
         onSubmit={(values) => {
           handleOnSubmit(values);
         }}>
-        {({handleSubmit, isSubmitting}) => (
+        {({ handleSubmit, isSubmitting }) => (
           <Form className='flex flex-col w-full relative h-[90%] md:h-[86%] 2xl:h-[75%] items-center '>
             <h1
               className={`login capitalize text-2xl md:text-3xl w-[80%] tracking-tight font-bold bg-gradient-to-r ${inter.className}

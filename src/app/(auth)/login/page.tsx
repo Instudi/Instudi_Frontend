@@ -1,19 +1,19 @@
 'use client';
-import {NextPage} from 'next';
-import {Formik, Form} from 'formik';
+import { NextPage } from 'next';
+import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import {Quicksand} from 'next/font/google';
+import { Quicksand } from 'next/font/google';
 import CrTextInput from '@/components/CrTextInput';
 import CrButton from '@/components/CrButton';
 import useTheme from '@/utils/hooks/useTheme';
 import CrInstudiText from '@/components/CrInstudiText';
 import Link from 'next/link';
-import {useRouter} from 'next/navigation';
-import {toast} from 'react-toastify';
-import {parseCookies} from 'nookies';
-import {useEffect, useState} from 'react';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+import { parseCookies } from 'nookies';
+import { useEffect, useState } from 'react';
 
-interface Props {}
+interface Props { }
 const quicksand = Quicksand({
   weight: '500',
   subsets: ['latin'],
@@ -22,7 +22,7 @@ const quicksand = Quicksand({
 async function login(email: string, password: string) {
   const res = await fetch(
     process.env.NODE_ENV == 'production'
-      ? 'https://api.instudi.com/auth/login'
+      ? `https://${process.env.ROOT_URI}/auth/login`
       : 'http://localhost:3006/auth/login',
     {
       method: 'POST',
@@ -30,7 +30,7 @@ async function login(email: string, password: string) {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({email, password}),
+      body: JSON.stringify({ email, password }),
     }
   );
 
@@ -38,7 +38,7 @@ async function login(email: string, password: string) {
 
   return json;
 }
-const LoginPage: NextPage<Props> = ({}) => {
+const LoginPage: NextPage<Props> = ({ }) => {
   interface Values {
     email: string;
     password: string;
@@ -85,7 +85,7 @@ const LoginPage: NextPage<Props> = ({}) => {
         onSubmit={(values) => {
           handleOnSubmit(values);
         }}>
-        {({handleSubmit, isSubmitting}) => (
+        {({ handleSubmit, isSubmitting }) => (
           <Form
             className='flex flex-col w-full relative h-[86%] 2xl:h-[75%] items-center 
           before:h-0.5 before:bg-yellow-300 before:absolute before:bottom-0 before:w-[60%] before:left-[20%]'>
