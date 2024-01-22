@@ -67,11 +67,11 @@ const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
 
   async function handleOnSubmit(values: Values) {
     const res = await register(values, role);
-    if (res.data.code === 200) {
+    if (res.data.code === 200 || res.code === 200) {
       router.push('/login');
       toast.success('Aramıza katıldın, giriş yapmayı unutma!');
     }
-    if (res.data.code == 1004) {
+    if (res.data.code == 1004 || res.code == 1004) {
       toast.error(res.data.message);
     }
   }
