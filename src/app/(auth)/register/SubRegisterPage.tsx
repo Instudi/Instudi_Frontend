@@ -26,8 +26,7 @@ const inter = Inter({ subsets: ['latin'] });
 async function register(values: Values, role: string) {
   const res = await fetch(
     process.env.NODE_ENV === 'production'
-      ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/users/add?email=${values.email}&password=${values.password
-      }&role=${role.toUpperCase()}`
+      ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/users/add`
       : `http://localhost:3000/api/add?email=${values.email}&password=${values.password
       }&role=${role.toUpperCase()}`,
     {
@@ -35,6 +34,7 @@ async function register(values: Values, role: string) {
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify({ email: values.email, password: values.password, role: role.toUpperCase() }),
     }
   )
 
