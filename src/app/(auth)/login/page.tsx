@@ -21,7 +21,7 @@ const quicksand = Quicksand({
 
 async function login(email: string, password: string) {
   const res = await fetch(
-    process.env.NEXT_PUBLIC_NODE_ENV == 'production'
+    process.env.NODE_ENV == 'production'
 
       ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/auth/login`
       : 'http://localhost:3006/auth/login',
