@@ -67,7 +67,6 @@ const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
 
   async function handleOnSubmit(values: Values) {
     const res = await register(values, role);
-    console.log(res)
     if (res.data.code === 200 || res.code === 200) {
       router.push('/login');
       toast.success('Aramıza katıldın, giriş yapmayı unutma!');
