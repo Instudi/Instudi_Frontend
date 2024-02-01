@@ -1,4 +1,4 @@
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 import Image from 'next/image';
 import BgImage from '../../../public/assets/bgresg.png';
 import CrInstudiText from '@/components/CrInstudiText';
@@ -7,7 +7,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const AuthLayout: NextPage<Props> = ({children}) => {
+const AuthLayout: NextPage<Props> = ({ children }) => {
   return (
     <div className={`w-screen h-screen`}>
       <CrInstudiText
@@ -18,7 +18,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
       />
       <div className='-translate-y-[8.4%] md:-translate-y-[17%] overflow-hidden'>
         <svg
-          className='translate-y-2.5 md:translate-y-4 scale-110 rotate-[2.5deg] pointer-events-none'
+          className='translate-y-2.5 md:translate-y-4 scale-110 xl:translate-y-8 rotate-[2.5deg] pointer-events-none'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 1440 320'>
           <path
@@ -28,7 +28,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
         </svg>
         <div className='bg-gradient-to-b h-[85vh] md:h-[70vh] via-[#8366ff] from-[var(--primary-rgb)] to-[#c986ff]'>
           <div
-            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] md:h-[100%] top-[4%] md:top-[0%] relative 
+            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] lg:h-[110%] md:h-[100%] top-[4%] md:top-[0%] relative 
             shadow-xl z-20 rounded-xl dark:bg-slate-800/90 bg-indigo-600/70'>
             {children}
           </div>
@@ -69,7 +69,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
               height='100%'
               transform='translate(50 50)'
               strokeWidth='0'
-              style={{transition: 'all 0.3s ease 0s'}}></path>{' '}
+              style={{ transition: 'all 0.3s ease 0s' }}></path>{' '}
           </svg>
           <svg
             className='absolute top-[18.3%] -left-[7%] md:top-[27%]  md:-left-[12%] w-[22%] rotate-6 z-0 aspect-square'
@@ -98,7 +98,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
               height='100%'
               transform='translate(50 50)'
               strokeWidth='0'
-              style={{transition: 'all 0.3s ease 0s'}}
+              style={{ transition: 'all 0.3s ease 0s' }}
               stroke='url(#sw-gradient)'></path>{' '}
           </svg>
           <svg
@@ -128,7 +128,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
               height='100%'
               transform='translate(50 50)'
               strokeWidth='0'
-              style={{transition: 'all 0.3s ease 0s'}}
+              style={{ transition: 'all 0.3s ease 0s' }}
               stroke='url(#sw-gradient-3)'></path>{' '}
           </svg>
           <svg
@@ -158,7 +158,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
               height='100%'
               transform='translate(50 50)'
               strokeWidth='0'
-              style={{transition: 'all 0.3s ease 0s'}}
+              style={{ transition: 'all 0.3s ease 0s' }}
               stroke='url(#sw-gradient)'></path>{' '}
           </svg>
           <svg
@@ -188,7 +188,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
               height='100%'
               transform='translate(50 50)'
               strokeWidth='0'
-              style={{transition: 'all 0.3s ease 0s'}}
+              style={{ transition: 'all 0.3s ease 0s' }}
               stroke='url(#sw-gradient)'></path>{' '}
           </svg>
           <svg
@@ -218,7 +218,7 @@ const AuthLayout: NextPage<Props> = ({children}) => {
               height='100%'
               transform='translate(50 50)'
               strokeWidth='0'
-              style={{transition: 'all 0.3s ease 0s'}}
+              style={{ transition: 'all 0.3s ease 0s' }}
               stroke='url(#sw-gradient-7)'></path>{' '}
           </svg>
         </div>

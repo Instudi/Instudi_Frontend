@@ -3,7 +3,7 @@ const siteMetadata = {
     author: 'Instudi',
     description: 'Eğitimde yeni jenerasyon!',
     language: 'tr',
-    siteUrl: 'https://instudi.vercel.app',
+    siteUrl: 'https://instudi.com',
     siteLogo: '/static/2.png',
     socialBanner: '/static/2.png',
     email: 'support@instudi.com',

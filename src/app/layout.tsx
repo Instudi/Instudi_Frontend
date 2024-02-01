@@ -1,6 +1,6 @@
 import '../styles/globals.css';
-import type {Metadata} from 'next';
-import {Inter, Quicksand} from 'next/font/google';
+import type { Metadata } from 'next';
+import { Inter, Quicksand } from 'next/font/google';
 import siteMetadata from '../siteMetadata.js';
 import Link from 'next/link';
 import CrMenuWrapper from '@/components/CrMenuWrapper';
@@ -9,9 +9,10 @@ import CrNavIsLoggedIn from '@/client/CrNavIsLoggedIn';
 import CrSuperLogo from '@/components/simple/CrSuperLogo';
 import CrToastContainer from '@/components/usecase/CrToastContainer';
 import CrNavLogic from '@/client/CrNavLogic';
+import { useEffect } from 'react';
 
-const inter = Inter({subsets: ['latin']});
-const quicksand = Quicksand({subsets: ['latin']});
+const inter = Inter({ subsets: ['latin'] });
+const quicksand = Quicksand({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -58,7 +59,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({children}: {children: React.ReactNode}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+
   return (
     <html
       lang={siteMetadata.language}
@@ -71,9 +73,9 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
       </head>
       <body className={inter.className}>
         <CrToastContainer />
-        <div className='w-[100vw] fixed dark:mix-blend-screen mix-blend-multiply backdrop-blur-sm z-50 invisible md:visible text-[var(--foreground-rgb)] bg-slate-300/10 align-middle text-center h-[10vh] flex flex-row  '>
+        <div className='nav-menu w-[100vw] fixed dark:mix-blend-screen mix-blend-multiply backdrop-blur-sm z-50 invisible md:visible text-[var(--foreground-rgb)] bg-slate-300/10 align-middle text-center h-[12vh] flex flex-row  '>
           <CrInstudiText useText={false} imgClass='shrink' />
-          <div className='basis-[32%]'></div>
+          <div className='basis-[20%] lg:basis-[32%]'></div>
           <div className='grow flex flex-row-reverse items-center justify-center'>
             <div className='grow flex justify-center items-center'>
               <CrNavIsLoggedIn
@@ -112,7 +114,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </div>
 
         <div className='md:pt-[15vh]'>{children}</div>
-        <footer className='w-full lg:mt-8 h-[80vh] lg:h-[30vh] relative flex flex-col lg:flex-row justify-center items-center'>
+        <footer className='w-full mt-12 md:mt-8 xl:mt-24 2xl:mt-36 h-[80vh] lg:h-[30vh] relative flex flex-col lg:flex-row justify-center items-center'>
           <div className='flex lg:flex-col flex-row order-2 flex-wrap lg:flex-nowrap lg:order-1 h-full basis-2/5 lg:basis-1/4 justify-around items-center'>
             <div className='h-fit w-full basis-[30%] lg:pt-5 opacity-80 dark:opacity-80'>
               <CrSuperLogo />

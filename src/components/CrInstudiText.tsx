@@ -1,4 +1,4 @@
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 import Logo from '../../public/static/2.png';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -22,11 +22,9 @@ const CrInstudiText: NextPage<Props> = ({
   className = '',
   mini = false,
 }) => {
-  const textClass = `${
-    mini ? 'text-4xl md:text-7xl' : 'text-6xl md:text-9xl'
-  }   ${
-    isBlock ? 'block indent-8' : 'inline grow'
-  }  tracking-[-.1em] antialiased font-bold 
+  const textClass = `${mini ? 'text-4xl md:text-7xl' : 'text-6xl md:text-9xl'
+    }   ${isBlock ? 'block indent-8' : 'inline grow'
+    }  tracking-[-.1em] antialiased font-bold 
   ${textClassName}  bg-gradient-to-br from-violet-600 to-indigo-600 bg-clip-text text-transparent`;
 
   return (
@@ -49,7 +47,7 @@ const CrInstudiText: NextPage<Props> = ({
             alt='Instudi Logo'
             width={85}
             height={150}
-            className={`hidden 2xl:inline-block ${imgClass}`}
+            className={`hidden lg:py-5 2xl:block ${imgClass}`}
           />
         </Link>
       ) : null}

@@ -26,9 +26,8 @@ const inter = Inter({ subsets: ['latin'] });
 async function register(values: Values, role: string) {
   const res = await fetch(
     process.env.NODE_ENV === 'production'
-      ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/users/add`
-      : `http://localhost:3000/api/add?email=${values.email}&password=${values.password
-      }&role=${role.toUpperCase()}`,
+      ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/${role.toLocaleLowerCase + "s"}/add`
+      : `http://localhost:3006/${role.toLocaleLowerCase + "s"}/add`,
     {
       method: 'POST',
       headers: {
@@ -88,7 +87,7 @@ const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
         {({ handleSubmit, isSubmitting }) => (
           <Form className='flex flex-col w-full relative h-[90%] md:h-[86%] 2xl:h-[75%] items-center '>
             <h1
-              className={`login capitalize text-2xl md:text-3xl w-[80%] tracking-tight font-bold bg-gradient-to-r ${inter.className}
+              className={`login capitalize text-2xl md:text-3xl md:pt-11 lg:pt-0 w-[80%] tracking-tight font-bold bg-gradient-to-r ${inter.className}
            from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-2.5 md:mt-0 mb-8 md:mb-10 text-center`}>
               slm, merhabalar efenim!
             </h1>
@@ -104,7 +103,7 @@ const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
               className={`basis-1/4 pt-2`}
               label='şifre'
             />
-            <div className={`md:mb-8`}>
+            <div className={`lg:mb-14`}>
               <CrButton
                 content='Kaydol!'
                 svgDs={[
