@@ -57,7 +57,7 @@ const CrButton: NextPage<CrButtonProps> = (props) => {
     : 'group-hover:text-[var(--primary-rgb)]'
     } 
   ${changeSvg
-      ? ' group-hover:-translate-x-8 md:group-hover:-translate-x-4'
+      ? ' md:group-hover:-translate-x-4 xl:-translate-x-6 2xl:-translate-x-8'
       : ' group-hover:-translate-x-2'
     }  group-hover:translate-y-0.5 2xl:text-2xl 2xl:group-hover:text-3xl`;
 

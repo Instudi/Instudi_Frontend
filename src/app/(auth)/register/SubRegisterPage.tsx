@@ -24,10 +24,11 @@ interface Values {
 const inter = Inter({ subsets: ['latin'] });
 
 async function register(values: Values, role: string) {
+  console.log(role)
   const res = await fetch(
     process.env.NODE_ENV === 'production'
-      ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/${role.toLocaleLowerCase + "s"}/add`
-      : `http://localhost:3006/${role.toLocaleLowerCase + "s"}/add`,
+      ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/${role.toLocaleLowerCase() + "s"}/add`
+      : `http://localhost:3006/${role.toLocaleLowerCase() + "s"}/add`,
     {
       method: 'POST',
       headers: {
