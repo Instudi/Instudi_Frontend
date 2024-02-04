@@ -10,6 +10,7 @@ import CrSuperLogo from '@/components/simple/CrSuperLogo';
 import CrToastContainer from '@/components/usecase/CrToastContainer';
 import CrNavLogic from '@/client/CrNavLogic';
 import { useEffect } from 'react';
+import CrNavLink from '@/components/simple/CrNavLink';
 
 const inter = Inter({ subsets: ['latin'] });
 const quicksand = Quicksand({ subsets: ['latin'] });
@@ -87,24 +88,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 url='/login'
               />
             </div>
-            <Link
-              className='text-xl antialiased grow underline underline-offset-2 decoration-wavy
-            decoration-[var(--secondary-rgb)] font-medium text-[var(--primary-rgb)] hover:font-semibold hover:text-2xl hover:no-underline transition-all '
-              href='/'>
-              Dersler
-            </Link>
-            <Link
-              className='text-xl antialiased grow underline underline-offset-2 decoration-wavy
-            decoration-[var(--secondary-rgb)] font-medium text-[var(--primary-rgb)]  hover:font-semibold hover:text-2xl hover:no-underline transition-all'
-              href='/'>
-              Podcast
-            </Link>
-            <Link
-              className='text-xl antialiased grow underline underline-offset-2 decoration-wavy
-            decoration-[var(--secondary-rgb)] font-medium text-[var(--primary-rgb)]  hover:font-semibold hover:text-2xl hover:no-underline transition-all'
-              href='/about'>
-              Webinarlar
-            </Link>
+            <CrNavLink link='/schools' text='Kurum Ara' />
+            <CrNavLink link='/podcast' text='Podcast' />
+            <CrNavLink link='/mentors' text='Mentör Ara' />
             <CrNavLogic />
           </div>
           <div className='basis-5'></div>

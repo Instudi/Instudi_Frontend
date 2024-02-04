@@ -1,11 +1,12 @@
 'use client';
+import CrNavLink from '@/components/simple/CrNavLink';
 import Link from 'next/link';
 import path from 'path';
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 
-interface Props {}
+interface Props { }
 
-const CrNavLogic = ({}) => {
+const CrNavLogic = ({ }) => {
   const [hasAuth, setHasAuth] = useState<boolean | null>(null);
   useEffect(() => {
     setHasAuth(localStorage.getItem('hasAuth') === 'true');
@@ -30,12 +31,7 @@ const CrNavLogic = ({}) => {
   }, [hasAuth]);
 
   return (
-    <Link
-      className='text-xl antialiased grow underline underline-offset-2 decoration-wavy
-            decoration-[var(--secondary-rgb)] font-medium text-[var(--primary-rgb)]  hover:font-semibold hover:text-2xl hover:no-underline transition-all'
-      href={path}>
-      Anasayfa
-    </Link>
+    <CrNavLink link={path} text='Anasayfa' />
   );
 };
 
