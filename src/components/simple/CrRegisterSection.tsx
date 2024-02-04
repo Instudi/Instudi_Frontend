@@ -1,5 +1,5 @@
-import {NextPage} from 'next';
-import {Inter} from 'next/font/google';
+import { NextPage } from 'next';
+import { Inter } from 'next/font/google';
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   id: string;
@@ -38,7 +38,7 @@ const CrRegisterSection: NextPage<Props> = ({
         {description}
       </p>
 
-      <span className=' absolute lg:top-full top-1/3 -translate-y-1/2 lg:right-1/2 lg:translate-x-1/2 right-0 fill-[var(--secondary-rgb)] -rotate-45 lg:w-16 w-8 lg:mr-0 mr-5'>
+      <span className=' absolute lg:top-full top-1/3 -translate-y-1/2 lg:right-1/2 lg:translate-x-1/2 right-0 fill-[var(--secondary-rgb)] -rotate-45 lg:w-[8vh] w-8 lg:mr-0 mr-5'>
         <svg
           stroke='inherit'
           fill='inherit'

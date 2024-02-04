@@ -28,7 +28,7 @@ const AuthLayout: NextPage<Props> = ({ children }) => {
         </svg>
         <div className='bg-gradient-to-b h-[85vh] md:h-[70vh] via-[#8366ff] from-[var(--primary-rgb)] to-[#c986ff]'>
           <div
-            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] lg:h-[110%] md:h-[100%] top-[4%] md:top-[0%] relative 
+            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] lg:h-[85vh] md:h-[100%] top-[4%] md:-top-[5%] relative 
             shadow-xl z-20 rounded-xl dark:bg-slate-800/90 bg-indigo-600/70'>
             {children}
           </div>

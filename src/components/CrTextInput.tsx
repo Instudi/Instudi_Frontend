@@ -1,7 +1,7 @@
-import {NextPage} from 'next';
-import {useField} from 'formik';
+import { NextPage } from 'next';
+import { useField } from 'formik';
 import logger from '@/utils/logger';
-import {useState} from 'react';
+import { useState } from 'react';
 
 interface Props {
   name: string;
@@ -10,10 +10,10 @@ interface Props {
   label?: string;
 }
 
-const CrTextInput: NextPage<Props> = ({name, type, label, className}) => {
+const CrTextInput: NextPage<Props> = ({ name, type, label, className }) => {
   const [dismiss, setDismiss] = useState(false);
   const [field, meta] = useField(name);
-  const {onChange, ...rest} = field;
+  const { onChange, ...rest } = field;
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -31,21 +31,19 @@ const CrTextInput: NextPage<Props> = ({name, type, label, className}) => {
 
   let error = meta.touched && !!meta.error && !dismiss;
   return (
-    <div className={`w-[71.2%] ${className} h-fit`}>
+    <div className={`w-[71.2%] ${className} h-fit md:mt-4`}>
       <div className='relative focus-within:scale-[1.15] transition-all'>
         {label ? (
           <span
             id={`${name}-label`}
             className={`pointer-events-none absolute z-20 mt-1.5 text-amber-500  text-lg antialiased
-            ${
-              meta.value
+            ${meta.value
                 ? '-translate-y-10 left-1/2 -translate-x-1/2 text-xl underline underline-offset-4 decoration-solid decoration-[var(--secondary-rgb)]'
                 : 'left-3 focus:-translate-y-10 focus:-translate-x-1/2'
-            } transition-all duration-300 ${
-              error
+              } transition-all duration-300 ${error
                 ? '!text-pink-300 dark:!text-red-600 dark:!decoration-red-600 !decoration-pink-300'
                 : ''
-            }`}>
+              }`}>
             {label}
           </span>
         ) : null}
@@ -57,11 +55,10 @@ const CrTextInput: NextPage<Props> = ({name, type, label, className}) => {
           text-[var(--secondary-rgb)] form-input rounded-md transition-all focus:opacity-100 opacity-80 
           focus:shadow-lg focus:bg-[var(--secondary-rgb)] focus:shadow-[var(--secondary-rgb)] 
           focus:caret-[var(--primary-rgb)] focus:outline-none focus:border-0 border-0 outline-none 
-          focus:ring-[var(--secondary-rgb)] focus:text-[var(--primary-rgb)] bg-indigo-600/90 ${
-            error
+          focus:ring-[var(--secondary-rgb)] focus:text-[var(--primary-rgb)] bg-indigo-600/90 ${error
               ? '!bg-pink-300  !ring-0 dark:!text-red-600 !text-pink-500'
               : ''
-          }`}
+            }`}
           onChange={(e) => {
             handleOnChange(e);
           }}

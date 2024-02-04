@@ -88,11 +88,11 @@ const LoginPage: NextPage<Props> = ({ }) => {
         }}>
         {({ handleSubmit, isSubmitting }) => (
           <Form
-            className='flex flex-col w-full relative h-[86%] 2xl:h-[75%] items-center 
+            className='flex flex-col justify-evenly w-full lg:gap-5 relative h-[86%] 2xl:h-[75%] items-center 
           before:h-0.5 before:bg-yellow-300 before:absolute before:bottom-0 before:w-[60%] before:left-[20%]'>
             <h1
               className='login text-2xl md:text-3xl tracking-tight font-bold bg-gradient-to-r
-           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-2.5 md:mt-0 mb-8 md:mb-10 text-center'>
+           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-8 mb-12 md:mt-0 md:mb-6 text-center'>
               <CrInstudiText
                 useText={false}
                 imgClass='mix-blend-multiply dark:mix-blend-screen relative left-1/2 -translate-x-1/2'
@@ -104,15 +104,15 @@ const LoginPage: NextPage<Props> = ({ }) => {
               name='email'
               type='email'
               label='email'
-              className={`basis-1/4 pt-3 ${quicksand.className}`}
+              className={`grow pt-3 ${quicksand.className}`}
             />
             <CrTextInput
               name='password'
               type='password'
-              className={`basis-1/4 pt-2 ${quicksand.className}`}
+              className={`grow pt-2 ${quicksand.className}`}
               label='şifre'
             />
-            <div className={`${quicksand.className} md:mb-8`}>
+            <div className={`${quicksand.className} grow `}>
               <CrButton
                 content='Giriş Yap!'
                 svgDs={[

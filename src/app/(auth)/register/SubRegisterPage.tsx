@@ -24,7 +24,6 @@ interface Values {
 const inter = Inter({ subsets: ['latin'] });
 
 async function register(values: Values, role: string) {
-  console.log(role)
   const res = await fetch(
     process.env.NODE_ENV === 'production'
       ? `https://${process.env.NEXT_PUBLIC_ROOT_URI}/${role.toLocaleLowerCase() + "s"}/add`
@@ -72,7 +71,7 @@ const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
         router.push('/login');
         toast.success('Aramıza katıldın, giriş yapmayı unutma!');
       }
-      if (res.data.code == 1004 || res.code == 1004) {
+      else {
         toast.error(res.data.message);
       }
     }, 100);
@@ -86,25 +85,25 @@ const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
           handleOnSubmit(values);
         }}>
         {({ handleSubmit, isSubmitting }) => (
-          <Form className='flex flex-col w-full relative h-[90%] md:h-[86%] 2xl:h-[75%] items-center '>
+          <Form className='flex flex-col justify-evenly w-full lg:gap-5 lg:h-[84%] relative h-full items-center '>
             <h1
               className={`login capitalize text-2xl md:text-3xl md:pt-11 lg:pt-0 w-[80%] tracking-tight font-bold bg-gradient-to-r ${inter.className}
-           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-2.5 md:mt-0 mb-8 md:mb-10 text-center`}>
+           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-4 md:mt-0 mb-12 lg:mt-6 lg:mb-4 text-center`}>
               slm, merhabalar efenim!
             </h1>
             <CrTextInput
               name='email'
               type='email'
               label='email'
-              className={`basis-1/4 pt-3`}
+              className={`grow pt-3`}
             />
             <CrTextInput
               name='password'
               type='password'
-              className={`basis-1/4 pt-2`}
+              className={`grow pt-2`}
               label='şifre'
             />
-            <div className={`lg:mb-14`}>
+            <div className={`grow`}>
               <CrButton
                 content='Kaydol!'
                 svgDs={[

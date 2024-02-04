@@ -56,12 +56,12 @@ const RegisterPage: NextPage<Props> = ({ }) => {
     <div
       className={`w-full h-full lg:overflow-hidden overflow-visible ${quicksand.className}`}>
       <div
-        className='flex flex-col w-full relative h-[90%] md:h-[86%] xl:gap-5 items-center 
+        className='flex flex-col w-full relative h-[90%] md:h-[86%] lg:gap-5 items-center 
           before:h-0.5 before:bg-yellow-300 before:absolute before:bottom-0 before:w-[60%] before:left-[20%]'>
         <h1
           className={`login text-2xl md:text-3xl ${inter.className
             } w-[80%] tracking-tight register font-bold bg-gradient-to-r
-           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-2.5 md:mt-0 mb-8 md:mb-10 text-center ${isClicked || isSectionConfirmed
+           from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-2.5 md:mt-0 mb-8 md:mb-[3vh] text-center ${isClicked || isSectionConfirmed
               ? 'duration-[2000ms] transition-all translate-x-[120%] opacity-0'
               : ''
             }`}>
