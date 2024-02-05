@@ -56,7 +56,7 @@ const RegisterPage: NextPage<Props> = ({ }) => {
     <div
       className={`w-full h-full lg:overflow-hidden overflow-visible ${quicksand.className}`}>
       <div
-        className='flex flex-col w-full relative h-[90%] md:h-[86%] lg:gap-5 items-center 
+        className='flex flex-col w-full  pt-[8%] relative h-[87%] lg:gap-5 items-center 
           before:h-0.5 before:bg-yellow-300 before:absolute before:bottom-0 before:w-[60%] before:left-[20%]'>
         <h1
           className={`login text-2xl md:text-3xl ${inter.className
@@ -65,15 +65,10 @@ const RegisterPage: NextPage<Props> = ({ }) => {
               ? 'duration-[2000ms] transition-all translate-x-[120%] opacity-0'
               : ''
             }`}>
-          <CrInstudiText
-            useText={false}
-            imgClass='mix-blend-screen relative left-1/2 -translate-x-1/2'
-            className='hidden md:block '
-          />
           Selamlar, önümüzde farklı yollar var! Seni tanıyalım?
         </h1>
         <div
-          className={`md:mt-5 mt-2 lg:hidden ${isClicked
+          className={`md:mt-5 mt-2 bottom-1/2 translate-y-1/2 absolute lg:hidden ${isClicked
             ? 'duration-700 transition-all translate-y-full scale-0'
             : ''
             }`}>
@@ -139,7 +134,7 @@ const RegisterPage: NextPage<Props> = ({ }) => {
             }}
           />
           <div
-            className={`absolute top-0 -translate-y-1/2 md:-translate-y-full shadow-xl left-1/2 -translate-x-1/2 ${section ? 'visible lg:invisible' : 'invisible'
+            className={`absolute -top-3 z-50 -translate-y-1/2 md:-translate-y-full shadow-xl left-1/2 -translate-x-1/2 ${section ? 'visible lg:invisible' : 'invisible'
               }`}>
             <CrButton
               useText={false}
@@ -156,18 +151,13 @@ const RegisterPage: NextPage<Props> = ({ }) => {
           </div>
         </div>
         <div
-          className={`absolute transition-all duration-[2000ms] w-full h-full ${isSectionConfirmed ? 'opacity-100' : '-translate-x-full opacity-0'
+          className={`absolute h-full transition-all duration-[2000ms] w-full ${isSectionConfirmed ? 'opacity-100' : '-translate-x-full opacity-0'
             }`}>
-          <CrInstudiText
-            useText={false}
-            imgClass='mix-blend-multiply lg:mix-blend-screen relative left-1/2 -translate-x-1/2'
-            className='hidden lg:block '
-          />
           <SubRegisterPage section={section} />
         </div>
       </div>
 
-      <div className='relative text-center w-full h-[10%] 2xl:h-[10%] md:h-[14%]'>
+      <div className='relative text-center w-full h-[13%]'>
         <p className='relative top-1/2 left-1/2 transition-all hover:scale-110 md:hover:scale-125 -translate-y-1/2 -translate-x-1/2 text-xs md:text-sm text-yellow-300'>
           Hesabınız Var mı? Hemen{' '}
           <Link

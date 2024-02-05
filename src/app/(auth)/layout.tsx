@@ -16,7 +16,7 @@ const AuthLayout: NextPage<Props> = ({ children }) => {
         isBlock={false}
         useText={false}
       />
-      <div className='-translate-y-[8.4%] md:-translate-y-[17%] overflow-hidden'>
+      <div className='-translate-y-[8.4%] md:-translate-y-[21%] overflow-hidden'>
         <svg
           className='translate-y-2.5 md:translate-y-4 scale-110 xl:translate-y-8 rotate-[2.5deg] pointer-events-none'
           xmlns='http://www.w3.org/2000/svg'
@@ -28,7 +28,7 @@ const AuthLayout: NextPage<Props> = ({ children }) => {
         </svg>
         <div className='bg-gradient-to-b h-[85vh] md:h-[70vh] via-[#8366ff] from-[var(--primary-rgb)] to-[#c986ff]'>
           <div
-            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] lg:h-[85vh] md:h-[100%] top-[4%] md:-top-[5%] relative 
+            className='md:w-[50vw] w-[86vw] left-[7vw] md:left-[25vw] md:pt-[1%] pt-[5%] h-[80%] lg:h-[80vh] md:h-[100%] top-[4%] md:-top-[8%] relative 
             shadow-xl z-20 rounded-xl dark:bg-slate-800/90 bg-indigo-600/70'>
             {children}
           </div>

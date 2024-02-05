@@ -91,13 +91,8 @@ const LoginPage: NextPage<Props> = ({ }) => {
             className='flex flex-col justify-evenly w-full lg:gap-5 relative h-[86%] 2xl:h-[75%] items-center 
           before:h-0.5 before:bg-yellow-300 before:absolute before:bottom-0 before:w-[60%] before:left-[20%]'>
             <h1
-              className='login text-2xl md:text-3xl tracking-tight font-bold bg-gradient-to-r
+              className='login pt-[8%] text-2xl md:text-3xl tracking-tight font-bold bg-gradient-to-r
            from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-8 mb-12 md:mt-0 md:mb-6 text-center'>
-              <CrInstudiText
-                useText={false}
-                imgClass='mix-blend-multiply dark:mix-blend-screen relative left-1/2 -translate-x-1/2'
-                className='hidden md:block'
-              />
               Tekrar Hoş Geldin!
             </h1>
             <CrTextInput

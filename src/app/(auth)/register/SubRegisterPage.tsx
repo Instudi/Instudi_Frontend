@@ -85,7 +85,7 @@ const SubRegisterPage: NextPage<Props> = ({ section, ...rest }) => {
           handleOnSubmit(values);
         }}>
         {({ handleSubmit, isSubmitting }) => (
-          <Form className='flex flex-col justify-evenly w-full lg:gap-5 lg:h-[84%] relative h-full items-center '>
+          <Form className='flex flex-col justify-evenly w-full lg:gap-5 lg:pb-[10%] relative h-full items-center '>
             <h1
               className={`login capitalize text-2xl md:text-3xl md:pt-11 lg:pt-0 w-[80%] tracking-tight font-bold bg-gradient-to-r ${inter.className}
            from-amber-200 to-yellow-500 bg-clip-text text-transparent mt-4 md:mt-0 mb-12 lg:mt-6 lg:mb-4 text-center`}>
