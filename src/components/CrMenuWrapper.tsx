@@ -51,15 +51,15 @@ const CrMenuWrapper: NextPage<Props> = ({ }) => {
             border-2 rounded-full border-[var(--secondary-rgb)] mt-3 mr-3 self-start sm:scale-150'
         />
         <Link
-          href={'/'}
+          href={'/feed'}
           className='col-start-2 col-span-2 active:font-semibold active:text-xl active:no-underline'>
-          Anasayfa
+          Akış
         </Link>
         <div className='row-start-2 active:font-semibold active:text-xl active:no-underline col-start-2 col-span-2 origin-bottom-left -rotate-[10deg]'>
-          Hakkımızda
+          Kurum Ara
         </div>
         <div className='row-start-2 active:font-semibold active:text-xl active:no-underline col-start-2 row-span-3 col-span-3 origin-bottom-left -rotate-[30deg]'>
-          İletişim
+          Mentör Ara
         </div>
         <Link
           href={'/login'}
