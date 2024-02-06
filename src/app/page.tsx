@@ -2,6 +2,7 @@ import Image from 'next/image';
 import InstudiApp from '../../public/static/instudiAppPage.png';
 import CrInstudiText from '@/components/CrInstudiText';
 import CrLinkButton from '@/client/CrLinkButton';
+import HoverCards from '@/client/HoverCards';
 const stats = [
   { id: 1, name: 'Çevrim içi öğrenimin geleneksel yöntemden daha iyi olduğunu söylüyor ', value: 'Öğrencilerin %70\'i', caption: "Potomac Üniversitesi" },
   { id: 2, name: 'Ayda 1\'den daha az rehberlik servislerinden yararlanmakta', value: '%55\'ten fazlası', caption: "Uluslararası İnsan Bilimleri Dergisi. 10.14687/ijhs.v11i2.2849" },
@@ -85,19 +86,19 @@ export default function Home() {
           <figure className="mt-10">
             <figcaption className="mb-10">
               <div className="mt-4 flex items-center justify-center space-x-3 text-2xl">
-                <div className="font-semibold text-gray-800/95 dark:text-[var(--primary-rgb)]">Instudi Neyi Amaçlar?</div>
+                <div className="font-semibold text-4xl text-gray-800/95 dark:text-[var(--primary-rgb)]">Instudi de Ne ola?</div>
                 <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-gray-800">
                   <circle cx={1} cy={1} r={1} />
                 </svg>
                 <div className="text-gray-600 text-lg">Kısaca</div>
               </div>
             </figcaption>
-            <blockquote className="text-center text-lg leading-8 text-gray-800/95 sm:text-2xl sm:leading-9 dark:text-slate-300/80">
-              <p>
-                Instudi, öğrencilerin akış kısmında birbirlerinden faydalanabileceği, mentörlük sayfasında üniversitelilerden ve
-                öğretmenlerden birebir görüşme veya sınıf dersi alabileceği, eğitim kurumlarını inceleyip webinarlara katılabilecekleri
-                ayrıca tüm dersler hakkında podcastler dinleyebilecekleri modüler bir platformdur. Eğitimde:
-              </p>
+            <blockquote className="text-center text-base leading-8 text-gray-800/95 sm:text-2xl sm:leading-9 dark:text-slate-300/80">
+
+              Instudi, öğrencilerin akış kısmında birbirlerinden faydalanabileceği, mentörlük sayfasında üniversitelilerden ve
+              öğretmenlerden birebir görüşme veya sınıf dersi alabileceği, eğitim kurumlarını inceleyip webinarlara katılabilecekleri
+              ayrıca tüm dersler hakkında podcastler dinleyebilecekleri modüler bir platformdur. Eğitimde değişen çağa ayak uyduran ve herkes için
+              yeni bir modül.
             </blockquote>
 
           </figure>
@@ -116,10 +117,10 @@ export default function Home() {
                   {stat.value}
                   <span className='group'>
                     *
-                    <div id="tooltip-default" role="tooltip" className="absolute z-10 invisible inline-block px-3 py-2 text-xs scale-0
-                    group-hover:scale-100 font-light tracking-normal shadow-slate-400 left-1/2 -translate-x-1/2 group-hover:-top-[50%] top-1/2 w-fit 
+                    <div id="tooltip-default" role="tooltip" className="absolute z-10 invisible inline-block px-3 py-2 text-xs
+                    group-hover:scale-105 font-light tracking-normal shadow-slate-400 left-1/2 -translate-x-1/2 group-hover:-top-[50%] top-1/2 w-fit 
                    text-[var(--background-start-rgb)] dark:text-slate-400 transition-all duration-300 bg-[var(--foreground-text-rgb)] rounded-lg shadow-lg opacity-30 dark:bg-gray-700 
-                   group-hover:visible group-hover:opacity-100  dark:shadow-blue-700/70">
+                   group-hover:visible group-hover:opacity-100 ease-in-out  dark:shadow-blue-700/70 blur-xl group-hover:blur-0">
                       {stat.caption}
                     </div>
                   </span>
@@ -130,6 +131,9 @@ export default function Home() {
         </div>
       </div>
 
+      <div className='w-full h-full'>
+        <HoverCards />
+      </div>
 
     </main>
   );

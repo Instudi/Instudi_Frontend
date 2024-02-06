@@ -5,30 +5,29 @@ import { XMarkIcon } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid'
 
 const sortOptions = [
-    { name: 'Most Popular', href: '#', current: true },
-    { name: 'Best Rating', href: '#', current: false },
-    { name: 'Newest', href: '#', current: false },
-    { name: 'Price: Low to High', href: '#', current: false },
-    { name: 'Price: High to Low', href: '#', current: false },
+    { name: 'En Popüler', href: '#', current: true },
+    { name: 'En iyi Puan', href: '#', current: false },
+    { name: 'En yeni', href: '#', current: false },
+    { name: 'Ücret: Artan', href: '#', current: false },
+    { name: 'Price: Azalan', href: '#', current: false },
 ]
 const subCategories = [
-    { name: 'Totes', href: '#' },
-    { name: 'Backpacks', href: '#' },
-    { name: 'Travel Bags', href: '#' },
-    { name: 'Hip Bags', href: '#' },
-    { name: 'Laptop Sleeves', href: '#' },
+    { name: 'Tümü', href: '#' },
+    { name: 'Develt Okulu', href: '#' },
+    { name: 'Özel Liseler', href: '#' },
+    { name: 'Dershaneler', href: '#' },
+    { name: 'Ek Kurslar', href: '#' },
 ]
 const filters = [
     {
-        id: 'color',
-        name: 'Color',
+        id: 'type',
+        name: 'Okul Türü',
         options: [
-            { value: 'white', label: 'White', checked: false },
-            { value: 'beige', label: 'Beige', checked: false },
-            { value: 'blue', label: 'Blue', checked: true },
-            { value: 'brown', label: 'Brown', checked: false },
-            { value: 'green', label: 'Green', checked: false },
-            { value: 'purple', label: 'Purple', checked: false },
+            { value: 'anadolu', label: 'Anadolu Lisesi', checked: false },
+            { value: 'fen', label: 'Fen Lisesi', checked: false },
+            { value: 'proje', label: 'Proje Liseler', checked: true },
+            { value: 'imamhatip', label: 'İmamhatip Liseleri', checked: false },
+            { value: 'ozel', label: 'Özel Liseler', checked: false },
         ],
     },
     {
@@ -43,15 +42,15 @@ const filters = [
         ],
     },
     {
-        id: 'size',
-        name: 'Size',
+        id: 'location',
+        name: 'Konum',
         options: [
-            { value: '2l', label: '2L', checked: false },
-            { value: '6l', label: '6L', checked: false },
-            { value: '12l', label: '12L', checked: false },
-            { value: '18l', label: '18L', checked: false },
-            { value: '20l', label: '20L', checked: false },
-            { value: '40l', label: '40L', checked: true },
+            { value: 'istanbul', label: 'İstanbul', checked: false },
+            { value: 'ankara', label: 'Ankara', checked: false },
+            { value: 'izmir', label: 'İzmir', checked: false },
+            { value: 'kocaeli', label: 'Kocaeli', checked: false },
+            { value: 'çanakkale', label: 'Çanakkale', checked: false },
+            { value: 'eskişehir', label: 'Eskişehir', checked: true },
         ],
     },
 ]
@@ -60,11 +59,11 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ');
 }
 
-export default function Example() {
+export default function Example({ children }: { children: React.ReactNode }) {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
 
     return (
-        <div className="bg-white">
+        <div className="bg-transparent">
             <div>
                 {/* Mobile filter dialog */}
                 <Transition.Root show={mobileFiltersOpen} as={Fragment}>
@@ -167,16 +166,16 @@ export default function Example() {
                 </Transition.Root>
 
                 <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 pt-24">
-                        <h1 className="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1>
+                    <div className="flex items-baseline justify-between border-b border-slate-600 pb-6 pt-24">
+                        <h1 className="text-4xl font-bold tracking-tight text-[var(--primary-rgb)]">Aradığın her tür Kurum tek bir yerde!</h1>
 
                         <div className="flex items-center">
                             <Menu as="div" className="relative inline-block text-left">
                                 <div>
-                                    <Menu.Button className="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                                        Sort
+                                    <Menu.Button className="group inline-flex justify-center text-sm font-medium text-[var(--secondary-rgb)]">
+                                        Sırala
                                         <ChevronDownIcon
-                                            className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                                            className="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-[var(--secondary-rgb)] group-hover:scale-125 transition-all duration-300 group-hover:text-amber-500"
                                             aria-hidden="true"
                                         />
                                     </Menu.Button>
@@ -214,13 +213,13 @@ export default function Example() {
                                 </Transition>
                             </Menu>
 
-                            <button type="button" className="-m-2 ml-5 p-2 text-gray-400 hover:text-gray-500 sm:ml-7">
+                            <button type="button" className="-m-2 ml-5 p-2 text-[var(--secondary-rgb)] group-hover:scale-125 transition-all duration-300 group-hover:text-amber-500 sm:ml-7">
                                 <span className="sr-only">View grid</span>
                                 <Squares2X2Icon className="h-5 w-5" aria-hidden="true" />
                             </button>
                             <button
                                 type="button"
-                                className="-m-2 ml-4 p-2 text-gray-400 hover:text-gray-500 sm:ml-6 lg:hidden"
+                                className="-m-2 ml-4 p-2 text-[var(--secondary-rgb)] group-hover:scale-125 transition-all duration-300 group-hover:text-amber-500 sm:ml-6 lg:hidden"
                                 onClick={() => setMobileFiltersOpen(true)}
                             >
                                 <span className="sr-only">Filters</span>
@@ -238,21 +237,21 @@ export default function Example() {
                             {/* Filters */}
                             <form className="hidden lg:block">
                                 <h3 className="sr-only">Categories</h3>
-                                <ul role="list" className="space-y-4 border-b border-gray-200 pb-6 text-sm font-medium text-gray-900">
+                                <ul role="list" className="space-y-4 border-b border-slate-600 pb-6 text-sm font-medium ">
                                     {subCategories.map((category) => (
-                                        <li key={category.name}>
+                                        <li key={category.name} className='text-slate-500 opacity-90 hover:opacity-100 hover:text-slate-300'>
                                             <a href={category.href}>{category.name}</a>
                                         </li>
                                     ))}
                                 </ul>
 
                                 {filters.map((section) => (
-                                    <Disclosure as="div" key={section.id} className="border-b border-gray-200 py-6">
+                                    <Disclosure as="div" key={section.id} className="border-b antialiased border-slate-600 py-6">
                                         {({ open }) => (
                                             <>
                                                 <h3 className="-my-3 flow-root">
-                                                    <Disclosure.Button className="flex w-full items-center justify-between bg-white py-3 text-sm text-gray-400 hover:text-gray-500">
-                                                        <span className="font-medium text-gray-900">{section.name}</span>
+                                                    <Disclosure.Button className="flex w-full items-center justify-between py-3 text-[var(--primary-rgb)] hover:scale-105 hover:text-base transition-all duration-300 hover:text-amber-500">
+                                                        <span className="font-medium text-[var(--secondary-rgb)]">{section.name}</span>
                                                         <span className="ml-6 flex items-center">
                                                             {open ? (
                                                                 <MinusIcon className="h-5 w-5" aria-hidden="true" />
@@ -291,7 +290,7 @@ export default function Example() {
                             </form>
 
                             {/* Product grid */}
-                            <div className="lg:col-span-3">{/* Your content */}</div>
+                            <div className="lg:col-span-3">{children}</div>
                         </div>
                     </section>
                 </main>
