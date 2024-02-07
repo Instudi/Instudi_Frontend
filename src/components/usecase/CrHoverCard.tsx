@@ -28,7 +28,7 @@ const CrHoverCard: NextPage<cardPropTypes> = (props) => {
          bg-opacity-10 from-white/20 z-1 via-slate-300/5 from-40% via-60% to-90% to-neutral-800/5 
         opacity-0 transition-opacity group-hover:opacity-100 duration-200'></div>
             <div className='hover-card-content dark:shadow-2xl dark:shadow-[var(--primary-rgb-30)] z-2 relative 
-            text-center  rounded-[inherit] dark:from-slate-700 dark:to-slate-800 aspect-[6/5] h-[15.9rem] m-[6px] 
+            text-center  rounded-[inherit] dark:from-slate-800 dark:to-slate-800 aspect-[6/5] h-[15.9rem] m-[6px] 
             bg-gradient-to-br from-indigo-400/0 to-slate-100/70'>
                 <div className="flex w-full h-full flex-col p-3 gap-5 items-center justify-center">
                     <Image
