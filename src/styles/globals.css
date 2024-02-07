@@ -10,10 +10,22 @@
   --secondary-rgb: rgba(255, 194, 41, 1);
   --background-start-rgb: rgb(212, 218, 232);
   --background-end-rgb: rgb(255, 255, 255);
+
+  --primary-rgb-30: rgba(82, 113, 255, 0.3);
+  --secondary-rgb-40: rgba(255, 194, 41, 0.4);
+
 }
 
 ::-ms-reveal {
   display: none;
+}
+
+@layer utilities {
+  .bg-gradient-radial {
+    background: radial-gradient(232px circle at var(--mouse-x) var(--mouse-y),
+        /* Adjust the displacement here */
+        var(--tw-gradient-stops));
+  }
 }
 
 /* Safari Only
@@ -40,6 +52,7 @@ _:future,
     --background-start-rgb: rgb(7, 34, 54);
     --background-end-rgb: rgb(0, 0, 0);
   }
+
 }
 
 body {
@@ -77,4 +90,10 @@ body {
     margin-right: 1.3em;
     scale: 1.10;
   }
+}
+
+.hover-card::before {
+  background: radial-gradient(800px circle at 1000px 1000px,
+      --primary-rgb,
+      tranparent 40%);
 }

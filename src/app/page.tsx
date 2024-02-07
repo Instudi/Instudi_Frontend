@@ -105,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="py-24 sm:py-32">
+      <div className="pt-24 sm:pt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
             {stats.map((stat) => (
@@ -130,10 +130,38 @@ export default function Home() {
           </dl>
         </div>
       </div>
+      <div className="inline-flex p-20 sm:p-24 items-center justify-center w-full">
+        <hr className="w-[75%] h-[3px] my-8 bg-slate-700/30 border-0 dark:bg-gray-700" />
+        <span className="absolute px-3 font-medium text-2xl text-slate-900/90 -translate-x-1/2 dark:bg-white/80 bg-[var(--secondary-rgb)] left-1/2 dark:text-white dark:bg-gray-900">?!?!!</span>
+      </div>
 
-      <div className='w-full h-full'>
+      <div className="order-first p-3 text-center mb-1 relative text-6xl subpixel-antialiased font-semibold tracking-tight  sm:text-5xl
+                bg-gradient-to-r dark:from-emerald-400 dark:to-yellow-200 bg-clip-text text-transparent
+                from-teal-300 to-sky-600">
+        yeter da, bize gerçek bir çözüm gerek.
+      </div>
+
+      <div className='mx-auto max-w-7xl px-6 lg:px-8 mt-[8vh] mb-[20vh]'>
         <HoverCards />
       </div>
+
+      <div className="order-first w-full !my-[20vh] flex flex-col gap-10 justify-center items-center text-center relative text-6xl subpixel-antialiased font-semibold tracking-tight sm:text-5xl
+                bg-gradient-to-r dark:from-emerald-400 dark:to-yellow-200 bg-clip-text text-transparent
+                from-teal-300 to-sky-600 ">
+        <div className='mb-4'>
+          kolay, erişilebilir, modern.
+        </div>
+        <CrInstudiText isBlock={false} useImg={true} useText={false} />
+        <CrLinkButton
+          svgDs={[
+            'M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z',
+            'M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z',
+          ]}
+          content='niye duruyorsun ki?'
+          url='/register'
+        />
+      </div>
+
 
     </main>
   );
