@@ -3,6 +3,7 @@ import InstudiApp from '../../public/static/instudiAppPage.png';
 import CrInstudiText from '@/components/CrInstudiText';
 import CrLinkButton from '@/client/CrLinkButton';
 import HoverCards from '@/client/HoverCards';
+
 const stats = [
   { id: 1, name: 'Çevrim içi öğrenimin geleneksel yöntemden daha iyi olduğunu söylüyor ', value: 'Öğrencilerin %70\'i', caption: "Potomac Üniversitesi" },
   { id: 2, name: 'Ayda 1\'den daha az rehberlik servislerinden yararlanmakta', value: '%55\'ten fazlası', caption: "Uluslararası İnsan Bilimleri Dergisi. 10.14687/ijhs.v11i2.2849" },
@@ -132,8 +133,9 @@ export default function Home() {
       </div>
       <div className="inline-flex p-20 sm:p-24 items-center justify-center w-full">
         <hr className="w-[75%] h-[3px] my-8 bg-slate-700/30 border-0 dark:bg-gray-700" />
-        <span className="absolute px-3 font-medium text-2xl text-slate-900/90 -translate-x-1/2 dark:bg-white/80 bg-[var(--secondary-rgb)] left-1/2 dark:text-white dark:bg-gray-900">?!?!!</span>
+        <span className="absolute px-3 font-medium text-2xl text-slate-900/90 -translate-x-1/2  bg-[var(--secondary-rgb)] left-1/2 dark:text-slate-400 dark:bg-slate-900">?!?!!</span>
       </div>
+
 
       <div className="order-first p-3 text-center mb-1 relative text-6xl subpixel-antialiased font-semibold tracking-tight  sm:text-5xl
                 bg-gradient-to-r dark:from-emerald-400 dark:to-yellow-200 bg-clip-text text-transparent
@@ -144,6 +146,9 @@ export default function Home() {
       <div className='mx-auto max-w-7xl px-6 lg:px-8 mt-[8vh] mb-[20vh]'>
         <HoverCards />
       </div>
+
+
+
 
       <div className="order-first w-full !my-[20vh] flex flex-col gap-10 justify-center items-center text-center relative text-6xl subpixel-antialiased font-semibold tracking-tight sm:text-5xl
                 bg-gradient-to-r dark:from-emerald-400 dark:to-yellow-200 bg-clip-text text-transparent

@@ -52,7 +52,7 @@ const CrButton: NextPage<CrButtonProps> = (props) => {
         ' 2xl:w-12 2xl:group-hover:w-14')
     } ${svgClassName}`;
 
-  const textClass = `text-xl group-hover:font-semibold group-hover:scale-[1.20] group-hover:tracking-tight pt-0.5 2xl:pt-2 duration-500 transition-all text-yellow-500 ${secondary
+  const textClass = `text-lg  md:text-xl group-hover:font-semibold group-hover:scale-[1.20] group-hover:tracking-tight pt-0.5 2xl:pt-2 duration-500 transition-all text-yellow-500 ${secondary
     ? 'group-hover:text-[var(--secondary-rgb)]'
     : 'group-hover:text-[var(--primary-rgb)]'
     } 
